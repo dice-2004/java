@@ -7,3 +7,4 @@ java24/bin/
 java24/.classpath
 java24/.project
 *.gitkeep
+*.class
