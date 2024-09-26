@@ -1,0 +1,9 @@
+.found
+.tmp
+java24/.log/
+java24/.settings/
+java24/.vscode/
+java24/bin/
+java24/.classpath
+java24/.project
+*.gitkeep
