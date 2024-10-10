@@ -29,19 +29,17 @@ public class Work4a {
     // ここに処理結果を出力するコードを書いてください。
     // 実行例では最後に改行されていることに注意すること。
     for (int i = 0; i < numbers.length; i++) {
-      System.out.print(numbers[i]);
-      if (i < numbers.length - 1) {
-        System.out.print(" ");
-      } else {
-        System.out.println();
-
-      }
+      System.out.print(numbers[i] + " ");
     }
-    System.out.println("小さい順に並び変えた配列の要素番号0-6の中から2個の整数を入力して下さい");
+    System.out.println();
+
+    System.out.println("小さい順に並び替えた配列の要素番号0-6の中から2個の整数を入力してください");
     a = sc.nextInt();
     b = sc.nextInt();
     System.out.println("入力した2要素に対応する配列値の積は" + calcProduct(numbers[a], numbers[b]) + "で商は"
         + calcQuotient(numbers[a], numbers[b]) + "です");
+
+    sc.close();
   }
 
   public static int calcProduct(int a, int b) {
