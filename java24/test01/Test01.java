@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Test1 {
   public static void main(String[] args) {
@@ -15,8 +16,9 @@ public class Test1 {
       System.out.println("ボールの数を入力してください(5以上)");
       ballNum = Integer.parseInt(sc.nextLine());
     }
-
+    ball = new char[ballNum];
     while (true) {
+      Arrays.fill(ball, ' ');
       System.out.println("ボールの色を入力して下さい(例 pgrby)");
       strBall = sc.nextLine();
       ball = strBall.toCharArray();
