@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class Test1 {
+public class Test01 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int ballNum = 0;
@@ -122,8 +122,8 @@ public class Test1 {
   }
 
   public static boolean checkFiveCollect(char[] ball, int i) {
-    char[] five = { 'r', 'g', 'b', 'y', 'p' , 'R', 'G', 'B', 'Y', 'P'};
-    if (ball[i] == five[i] || ball[i] == five[i+5]) {
+    char[] five = { 'r', 'g', 'b', 'y', 'p', 'R', 'G', 'B', 'Y', 'P' };
+    if (ball[i] == five[i] || ball[i] == five[i + 5]) {
       return true;
     }
     return false;
@@ -132,7 +132,7 @@ public class Test1 {
 
   // 文字一つ一つに対してひとつ前までの文字と比較して正しく並んでいるか判定
   public static boolean checkOneCollect(char[] ball, int i) {
-    if(i!=0 && getColorNum(ball[i]) == getColorNum(ball[i-1])) {
+    if (i != 0 && getColorNum(ball[i]) == getColorNum(ball[i - 1])) {
       return true;
     }
     for (int j = 1; j < i; j++) {
@@ -140,7 +140,7 @@ public class Test1 {
         return false;
       }
     }
-    for (int j=ball.length-1; j>i; j--) {
+    for (int j = ball.length - 1; j > i; j--) {
       if (getColorNum(ball[j]) < getColorNum(ball[i])) {
         return false;
       }
