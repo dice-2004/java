@@ -47,6 +47,23 @@ public class EventTableT03 extends BaseTableT03 {
     }
   }
 
+  @Override
+  public void find(String name) throws HeroNotFoundExceptionT03 {
+    int count = 0;
+    for (EventT03 event : eventList) {
+      String[] heroName = event.getHeroName().split("/");
+      for (String hero : heroName) {
+        if (hero.equals(name)) {
+          System.out.print(event);
+          count++;
+        }
+      }
+    }
+    if (count == 0) {
+      throw new HeroNotFoundExceptionT03("「勇者が見つかりません」" + name);
+    }
+  }
+
   private EventT03 serchEvent(String eventName) {
     for (EventT03 event : eventList) {
       if (event.getEventName().equals(eventName)) {
@@ -54,20 +71,6 @@ public class EventTableT03 extends BaseTableT03 {
       }
     }
     return null;
-  }
-
-  @Override
-  public void find(String name) throws HeroNotFoundExceptionT03 {
-    int count = 0;
-    for (EventT03 event : eventList) {
-      if (event.getHeroName().contains(name)) {
-        System.out.print(event);
-        count++;
-      }
-    }
-    if (count == 0) {
-      throw new HeroNotFoundExceptionT03("「勇者が見つかりません」" + name);
-    }
   }
 
   public void createEvent(String eventName, String monsterName, String[] heroName, HeroTableT03 heros,

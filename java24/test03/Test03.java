@@ -4,10 +4,11 @@ public class Test03 {
   public static void main(String[] args) {
     try {
       if (args.length < 3) {
-        throw new IllegalArgumentException("コマンドライン引数が指定されていません");
+        throw new IllegalArgumentException("「使い方」java Test03 <heroes.csv> <monsters.csv> <events.csv>");
       }
     } catch (IllegalArgumentException e) {
       System.out.println(e.getMessage());
+      return;
     }
     Scanner sc = new Scanner(System.in);
     HeroTableT03 heros = new HeroTableT03(args[0]);
@@ -31,16 +32,6 @@ public class Test03 {
         System.out.println(e.getMessage());
       }
     }
-    // try {
-    // heros.find("Merlin");
-    // monsters.find("Dragon");
-    // events.find("Arthur");
-    // // heros.find("Goblin");
-    // // monsters.find("Arthur");
-    // events.find("DragonSlayer");
-    // } catch (HeroNotFoundExceptionT03 | MonsterNotFoundExceptionT03 e) {
-    // System.out.println(e.getMessage());
-    // }
     sc.close();
   }
 }

@@ -34,7 +34,7 @@ public class CommandHandlerT03 {
 
   private void handleHeroCommand(HeroTableT03 heros) throws InvalidCommandExceptionT03, HeroNotFoundExceptionT03 {
     switch (commands[1]) {
-      case "heros":
+      case "heroes":
         heros.printData();
         break;
       case "find":
@@ -91,7 +91,11 @@ public class CommandHandlerT03 {
     }
   }
 
-  private void handleCreateCommand(EventTableT03 events, HeroTableT03 heros, MonsterTableT03 monsters) {
+  private void handleCreateCommand(EventTableT03 events, HeroTableT03 heros, MonsterTableT03 monsters)
+      throws InvalidCommandExceptionT03 {
+    if (commands.length < 4) {
+      throw new InvalidCommandExceptionT03("「コマンドに指定された引数が正しくありません」");
+    }
     String eventName = commands[1];
     String monsterName = commands[2];
     String[] heroName = new String[commands.length - 3];

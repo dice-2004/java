@@ -30,6 +30,7 @@ public class EventT03 {
   public void setHeroName(String heroName) {
     this.heroName = heroName;
   }
+
   public String toString() {
     return String.format("「イベント」%-15s「モンスター」%-10s「勇者」%s「結果」%s\n", eventName, monsterName, heroName, result);
   }
